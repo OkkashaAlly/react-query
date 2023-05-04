@@ -1,7 +1,11 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Link from "next/link";
 import "./globals.css";
+
+// Create a client
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -13,7 +17,9 @@ export default function RootLayout({
       <body>
         <NavBar />
         <main className="p-3">
-          {children}
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
         </main>
       </body>
     </html>
