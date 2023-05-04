@@ -1,0 +1,19 @@
+{
+  "superheros": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "superpower": "Rich"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "superpower": "Flying"
+    },
+    {
+      "id": 3,
+      "name": "Spider-man",
+      "superpower": "Spider"
+    }
+  ]
+}
