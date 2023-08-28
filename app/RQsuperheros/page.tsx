@@ -13,7 +13,9 @@ const RQSuperheros = () => {
 
   const { data, isLoading, isError, error } = useQuery<Heros, Error>(
     ["super-heros"],
-    getSuperHeros
+    getSuperHeros, {
+      cacheTime: 5000 
+    }
   );
 
   if (isLoading) return <p>Loading...</p>;
