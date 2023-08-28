@@ -14,7 +14,8 @@ const RQSuperheros = () => {
   const { data, isLoading, isError, error } = useQuery<Heros, Error>(
     ["super-heros"],
     getSuperHeros, {
-      cacheTime: 5000 
+      // cacheTime: 5000, // 5 seconds caches the data
+      staleTime: 10000, // 10 seconds waits 10 seconds before refetching
     }
   );
 
