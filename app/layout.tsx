@@ -1,6 +1,7 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Link from "next/link";
 import "./globals.css";
 
@@ -19,6 +20,8 @@ export default function RootLayout({
         <main className="p-3">
           <QueryClientProvider client={queryClient}>
             {children}
+            {/* The rest of your application */}
+            <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
         </main>
       </body>

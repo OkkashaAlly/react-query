@@ -6,7 +6,7 @@ import axios from "axios";
 const RQSuperheros = () => {
   const getSuperHeros = async () =>
     axios
-      .get("http://localhost:3004/superheros1")
+      .get("http://localhost:3004/superheros")
       .then(res => res.data as [{ id: string; name: string }]);
 
   type Heros = [{ id: string; name: string }];
