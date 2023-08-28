@@ -9,10 +9,7 @@ const RQSuperheros = () => {
       .get("http://localhost:3004/superheros")
       .then(res => res.data as [{ id: string; name: string }]);
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["super-heros"],
-    queryFn: getSuperHeros,
-  });
+  const { data, isLoading } = useQuery(["super-heros"], getSuperHeros);
 
   if (isLoading) return <p>Loading...</p>;
 
