@@ -6,12 +6,19 @@ import axios from "axios";
 const RQSuperheros = () => {
   const getSuperHeros = async () =>
     axios
-      .get("http://localhost:3004/superheros")
+      .get("http://localhost:3004/superheros1")
       .then(res => res.data as [{ id: string; name: string }]);
 
-  const { data, isLoading } = useQuery(["super-heros"], getSuperHeros);
+  type Heros = [{ id: string; name: string }];
+
+  const { data, isLoading, isError, error } = useQuery<Heros, Error>(
+    ["super-heros"],
+    getSuperHeros
+  );
 
   if (isLoading) return <p>Loading...</p>;
+
+  if (isError) return <p>Error: {error.message}</p>;
 
   return (
     <>
