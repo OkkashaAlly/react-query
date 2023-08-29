@@ -4,14 +4,22 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const RQSuperheros = () => {
+  const onSuccess = (data: any) => {
+    console.log("Performing onSuccess handler, data", data);
+  };
+
+   const onError = (data: any) => {
+    console.log("Performing onError handler, data", data);
+  };
+  
   const getSuperHeros = async () =>
     axios
-      .get("http://localhost:3004/superheros")
+      .get("http://localhost:3004/superheros1")
       .then(res => res.data as [{ id: string; name: string }]);
 
   type Heros = [{ id: string; name: string }];
 
-  const { data,refetch, isLoading, isInitialLoading, isError, error } = useQuery<Heros, Error>(
+  const { data,refetch, isInitialLoading, isError, error } = useQuery<Heros, Error>(
     ["super-heros"],
     getSuperHeros, {
       // cacheTime: 5000, // 5 seconds caches the data
@@ -21,6 +29,8 @@ const RQSuperheros = () => {
       // refetchInterval: 2000, // refetch every 2 seconds on window focus
       // refetchIntervalInBackground: true, // refetch in the background every 2 seconds
       enabled: false, // if false, the query will not execute
+      onSuccess, // call back function after success of the query
+      onError, // call back function after error of the query
     }
   );
 
