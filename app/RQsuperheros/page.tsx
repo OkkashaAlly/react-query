@@ -15,7 +15,9 @@ const RQSuperheros = () => {
     ["super-heros"],
     getSuperHeros, {
       // cacheTime: 5000, // 5 seconds caches the data
-      staleTime: 10000, // 10 seconds waits 10 seconds before refetching
+      // staleTime: 10000, // 10 seconds waits 10 seconds before refetching
+      // refetchOnMount: true, // refetches when the component mounts
+      // refetchOnWindowFocus: true, // refetches when the window is in focus
     }
   );
 
