@@ -18,6 +18,8 @@ const RQSuperheros = () => {
       // staleTime: 10000, // 10 seconds waits 10 seconds before refetching
       // refetchOnMount: true, // refetches when the component mounts
       // refetchOnWindowFocus: true, // refetches when the window is in focus
+      // refetchInterval: 2000, // refetches every 2 seconds on window focus
+      // refetchIntervalInBackground: true, // refetches in the background every 2 seconds
     }
   );
 
