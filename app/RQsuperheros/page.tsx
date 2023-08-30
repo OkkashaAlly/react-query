@@ -1,6 +1,7 @@
 "use client";
 
 import { useSuperHerosData } from "@/hooks/useSuperHerosData";
+import Link from "next/link";
 
 const RQSuperheros = () => {
   const onSuccess = (data: any) => {
@@ -25,8 +26,10 @@ const RQSuperheros = () => {
       <div>RQSuperheros</div>
       <button onClick={() => refetch()}>Get superheros</button>
       <ul className="pl-8 pt-3 list-disc">
-        {data?.map((item: string) => (
-          <li key={item}>{item}</li>
+        {data?.map((item) => (
+          <li key={item.id}>
+            <Link href={`/RQsuperheros/${item.id}`}>{item.name}</Link>
+          </li>
         ))}
       </ul>
     </>

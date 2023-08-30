@@ -11,7 +11,7 @@ type Heros = [{ id: string; name: string }];
 type Function = (data: Heros | Error) => void;
 
 export const useSuperHerosData = (onSuccess: Function, onError:Function) => {
-  return useQuery<any, Error>(["super-heros"], getSuperHeros, {
+  return useQuery<Heros, Error>(["super-heros"], getSuperHeros, {
     // cacheTime: 5000, // 5 seconds caches the data
     // staleTime: 10000, // 10 seconds waits 10 seconds before refetching
     // refetchOnMount: true, // refetch when the component mounts
@@ -21,6 +21,6 @@ export const useSuperHerosData = (onSuccess: Function, onError:Function) => {
     enabled: false, // if false, the query will not execute
     // onSuccess, // call back function after success of the query
     // onError, // call back function after error of the query
-    select: (data: Heros) => data.map(item => item.name), // select the data you want to return
+    // select: (data: Heros) => data.map(item => item.name), // select the data you want to return
   });
 };
