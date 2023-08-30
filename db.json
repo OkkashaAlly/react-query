@@ -15,5 +15,22 @@
       "name": "Spider-man",
       "superpower": "Spider"
     }
+  ],
+  "villains": [
+    {
+      "id": 1,
+      "name": "Joker",
+      "superpower": "Crazy"
+    },
+    {
+      "id": 2,
+      "name": "Lex Luthor",
+      "superpower": "Rich"
+    },
+    {
+      "id": 3,
+      "name": "Green Goblin",
+      "superpower": "Goblin"
+    }
   ]
 }
