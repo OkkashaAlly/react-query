@@ -41,8 +41,12 @@ const NavBar = () => {
         </li>
         <li>
           <Link href="/RQsuperheros">RQSuperheros</Link>
-        </li><li>
+        </li>
+        <li>
           <Link href="/RQparallel">RQParallel</Link>
+        </li>
+        <li>
+          <Link href="/RQDynamicParallel">RQDynamicParallel</Link>
         </li>
       </ul>
     </nav>
