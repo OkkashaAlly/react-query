@@ -48,6 +48,9 @@ const NavBar = () => {
         <li>
           <Link href="/RQDynamicParallel">RQDynamicParallel</Link>
         </li>
+        <li>
+          <Link href="/RQDependentQueries">RQDependentQueries</Link>
+        </li>
       </ul>
     </nav>
   );

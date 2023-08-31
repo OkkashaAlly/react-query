@@ -32,5 +32,20 @@
       "name": "Green Goblin",
       "superpower": "Goblin"
     }
+  ],
+  "users": [
+    {
+      "id": "okkasha@gmail.com",
+      "name": "Okkasha",
+      "channelId": "okkasha"
+    }
+  ],
+  "channels": [
+    {
+      "id": "okkasha",
+      "name": "Okkasha",
+      "description": "Okkasha's channel",
+      "owner": "Okkasha"
+    }
   ]
 }
