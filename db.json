@@ -47,5 +47,32 @@
       "description": "Okkasha's channel",
       "owner": "Okkasha"
     }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },{
+      "id": 2,
+      "label": "green"
+    },{
+      "id": 3,
+      "label": "white"
+    },{
+      "id": 4,
+      "label": "yellow"
+    },{
+      "id": 5,
+      "label": "blue"
+    },{
+      "id": 6,
+      "label": "orange"
+    },{
+      "id": 7,
+      "label": "brown"
+    },{
+      "id": 8,
+      "label": "pink"
+    }
   ]
 }

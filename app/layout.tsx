@@ -51,6 +51,9 @@ const NavBar = () => {
         <li>
           <Link href="/RQDependentQueries">RQDependentQueries</Link>
         </li>
+        <li>
+          <Link href="/RQPaginatedQueries">RQPaginatedQueries</Link>
+        </li>
       </ul>
     </nav>
   );
