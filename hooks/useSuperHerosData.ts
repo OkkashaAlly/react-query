@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 const getSuperHeros = async () =>
@@ -24,7 +24,7 @@ export const useSuperHerosData = (onSuccess: Function, onError: Function) => {
     // refetchOnWindowFocus: true, // refetch when the window is in focus
     // refetchInterval: 2000, // refetch every 2 seconds on window focus
     // refetchIntervalInBackground: true, // refetch in the background every 2 seconds
-    enabled: false, // if false, the query will not execute
+    // enabled: false, // if false, the query will not execute
     // onSuccess, // call back function after success of the query
     // onError, // call back function after error of the query
     // select: (data: Heros) => data.map(item => item.name), // select the data you want to return
@@ -32,7 +32,24 @@ export const useSuperHerosData = (onSuccess: Function, onError: Function) => {
 };
 
 export const useAddSuperHero = () => {
+  const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn: addSuperHero,
+    onSuccess: postData => {
+      console.log(
+        "🚀 ~ file: useSuperHerosData.ts:40 ~ useAddSuperHero ~ postData:",
+        postData
+      );
+      // queryClient.invalidateQueries({ queryKey: ["super-heros"] });
+      queryClient.setQueryData(["super-heros"], (oldData: any) => {
+        console.log(
+          "🚀 ~ file: useSuperHerosData.ts:43 ~ useAddSuperHero ~ oldData:",
+          oldData
+        );
+
+        return [...oldData, postData];
+      });
+    },
   });
 };
