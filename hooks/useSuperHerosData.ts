@@ -37,19 +37,9 @@ export const useAddSuperHero = () => {
   return useMutation({
     mutationFn: addSuperHero,
     onSuccess: postData => {
-      console.log(
-        "🚀 ~ file: useSuperHerosData.ts:40 ~ useAddSuperHero ~ postData:",
-        postData
-      );
-      // queryClient.invalidateQueries({ queryKey: ["super-heros"] });
-      queryClient.setQueryData(["super-heros"], (oldData: any) => {
-        console.log(
-          "🚀 ~ file: useSuperHerosData.ts:43 ~ useAddSuperHero ~ oldData:",
-          oldData
-        );
-
-        return [...oldData, postData];
-      });
+      
+      queryClient.invalidateQueries({ queryKey: ["super-heros"] });
+      
     },
   });
 };
