@@ -37,9 +37,12 @@ export const useAddSuperHero = () => {
   return useMutation({
     mutationFn: addSuperHero,
     onSuccess: postData => {
+      // queryClient.invalidateQueries({ queryKey: ["super-heros"] });
+      queryClient.setQueryData(["super-heros"], (oldData: any) => {
+        
+        return [...oldData, postData]
       
-      queryClient.invalidateQueries({ queryKey: ["super-heros"] });
-      
+      });
     },
   });
 };
